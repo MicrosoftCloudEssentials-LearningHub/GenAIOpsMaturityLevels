@@ -39,16 +39,12 @@ Last updated: 2025-02-19
 - **Create a Log Analytics Workspace**:
      1. **Navigate to Log Analytics**: In the [Azure portal](https://portal.azure.com), search for `Log Analytics` and select `Create`.
 
-        <div align="center">
-          <img src="https://github.com/user-attachments/assets/1e801dfc-b679-49f7-b6cd-7c4fe37114da" alt="Centered Image" style="border: 2px solid #4CAF50;  border-radius: 5px; padding: 5px;";  width="750" />
-        </div>
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/1e801dfc-b679-49f7-b6cd-7c4fe37114da" />
 
      2. **Configure Workspace**: Choose your subscription, create or select a Resource Group, provide a name for the workspace, select a region, and click `Review + Create`.
 
-        <div align="center">
-          <img src="https://github.com/user-attachments/assets/901eb973-71c0-4dd1-88c3-e7e420f05d3d" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"; width="750"/>
-        </div>
-        
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/901eb973-71c0-4dd1-88c3-e7e420f05d3d" />
+
 - **Configure Data Collection**:
      1. **Set Up Diagnostic Settings**: Navigate to the resource you want to monitor, select `Diagnostic settings`, and configure it to send logs and metrics to your Log Analytics workspace.
 
