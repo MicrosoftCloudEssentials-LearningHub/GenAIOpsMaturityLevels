@@ -30,12 +30,9 @@ Last updated: 2025-02-19
 > [!IMPORTANT]
 > The cost of your workspace depends on how much data you bring in and how long you keep it. You can find regional pricing details on the [Azure Monitor pricing page](https://azure.microsoft.com/en-us/pricing/details/monitor/). You can switch to another pricing tier after setting up your workspace. Learn more about [Log Analytics pricing models](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs#pricing-model).
 
-
-
 | Before any maturity implementation | After | 
 | --- | --- | 
-| <img width="550" alt="image" src="https://github.com/user-attachments/assets/dd44dc11-0f84-42f8-a451-f45a8cede608" /> | 
-
+| <img width="550" alt="image" src="https://github.com/user-attachments/assets/dd44dc11-0f84-42f8-a451-f45a8cede608" /> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/57599fb3-2f0e-4293-8f24-c8e4d1bcfe29" /> | 
 
 ### Use Azure Monitor and Log Analytics for comprehensive monitoring
 
@@ -43,13 +40,13 @@ Last updated: 2025-02-19
      1. **Navigate to Log Analytics**: In the [Azure portal](https://portal.azure.com), search for `Log Analytics` and select `Create`.
 
         <div align="center">
-          <img src="https://github.com/user-attachments/assets/1e801dfc-b679-49f7-b6cd-7c4fe37114da" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+          <img src="https://github.com/user-attachments/assets/1e801dfc-b679-49f7-b6cd-7c4fe37114da" alt="Centered Image" style="border: 2px solid #4CAF50;  border-radius: 5px; padding: 5px;";  width="750" />
         </div>
 
      2. **Configure Workspace**: Choose your subscription, create or select a Resource Group, provide a name for the workspace, select a region, and click `Review + Create`.
 
         <div align="center">
-          <img src="https://github.com/user-attachments/assets/901eb973-71c0-4dd1-88c3-e7e420f05d3d" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+          <img src="https://github.com/user-attachments/assets/901eb973-71c0-4dd1-88c3-e7e420f05d3d" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"; width="750"/>
         </div>
 
 - **Configure Data Collection**:
