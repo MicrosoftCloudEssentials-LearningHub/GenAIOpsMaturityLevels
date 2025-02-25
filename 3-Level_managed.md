@@ -48,9 +48,7 @@ Last updated: 2025-02-19
 - **Configure Data Collection**:
      1. **Set Up Diagnostic Settings**: Navigate to the resource you want to monitor, select `Diagnostic settings`, and configure it to send logs and metrics to your Log Analytics workspace.
 
-        <div align="center">
-          <img src="https://github.com/user-attachments/assets/549c143e-fef3-4283-8a50-31787cd2f97f" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"; width="550"/>
-        </div>
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/549c143e-fef3-4283-8a50-31787cd2f97f" />
 
         | Before configuration | Example of configuration |
         | ---- | ---- |
@@ -61,41 +59,29 @@ Last updated: 2025-02-19
              - Log in to the [Azure Portal](https://portal.azure.com/).
              - In the left-hand menu, select `Monitor`.
 
-                  <div align="center">
-                    <img src="https://github.com/user-attachments/assets/6e9b5439-1803-4121-98b7-90ad0b95d6ed" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"; width="550"/>
-                  </div>
+                  <img width="550" alt="image" src="https://github.com/user-attachments/assets/6e9b5439-1803-4121-98b7-90ad0b95d6ed" />
 
-                  <div align="center">
-                    <img src="https://github.com/user-attachments/assets/247d81c7-5a1e-4bfa-b0de-e4d22d9f4b12" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"; width="550"/>
-                  </div>
+                  <img width="550" alt="image" src="https://github.com/user-attachments/assets/247d81c7-5a1e-4bfa-b0de-e4d22d9f4b12" />
 
           2. Configure Data Collection:
              - Navigate to the `Settings` section and select `Data Collection Rules`.
              - Click on `+ Create` to set up a new data collection rule.
 
-                  <div align="center">
-                    <img src="https://github.com/user-attachments/assets/9abe3244-9cd9-4833-b590-a0d3c15a304f" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"; width="550"/>
-                  </div>
-                  
+                  <img width="550" alt="image" src="https://github.com/user-attachments/assets/9abe3244-9cd9-4833-b590-a0d3c15a304f" />
+
              - Provide a name for the rule and select the subscription and resource group.
              - Choose the resources you want to monitor (e.g., Virtual Machines, Storage Accounts).
 
-                  <div align="center">
-                    <img src="https://github.com/user-attachments/assets/92b9c9b3-f244-42d6-b968-054be9dfc14e" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"; width="550"/>
-                  </div>
+                  <img width="550" alt="image" src="https://github.com/user-attachments/assets/92b9c9b3-f244-42d6-b968-054be9dfc14e" />
                   
 - **Write and Run Queries**:
      1. **Log Analytics Interface**: Open Log Analytics from the Azure Monitor menu, and use the query window to write and run Kusto Query Language (KQL) queries.
 
-        <div align="center">
-          <img src="https://github.com/user-attachments/assets/16517b1b-5341-475b-996d-014a840f3bdb" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"; width="550"/>
-        </div>
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/16517b1b-5341-475b-996d-014a840f3bdb" />
 
      2. **Example Queries**: Utilize example queries provided in the Log Analytics interface to learn and customize your own queries.
 
-        <div align="center">
-          <img src="https://github.com/user-attachments/assets/16517b1b-5341-475b-996d-014a840f3bdb" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"; width="550"/>
-        </div>
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/16517b1b-5341-475b-996d-014a840f3bdb" />
 
 ### Set up alerts and dashboards for real-time insights
 
