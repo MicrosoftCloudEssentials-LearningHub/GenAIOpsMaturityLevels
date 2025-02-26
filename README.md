@@ -11,6 +11,13 @@ Last updated: 2025-02-19
 
 > **Generative Artificial Intelligence Operations (GenAIOps)**, also known as LLMOps, describes the operational practices and strategies for managing large language models (LLMs) in production. The maturity levels help organizations understand and improve their capabilities in managing these models.
 
+<details>
+<summary><b>List of References </b> (Click to expand)</summary>
+
+- [Advance your maturity level for Generative Artificial Intelligence Operations (GenAIOps)](https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/concept-llmops-maturity?view=azureml-api-2)
+- [Model monitoring for generative AI applications (preview)](https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-monitor-generative-ai-applications?view=azureml-api-2)
+
+</details>
 
 ```mermaid
 graph LR
