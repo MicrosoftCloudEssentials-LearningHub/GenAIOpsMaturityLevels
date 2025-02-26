@@ -19,6 +19,11 @@ Last updated: 2025-02-19
 
 </details>
 
+> [!IMPORTANT]
+> Please take this [GenAIOps Maturity Model Assessment](https://learn.microsoft.com/en-us/assessments/e14e1e9f-d339-4d7e-b2bb-24f056cf08b6/) to determine your current level of maturity. 
+
+https://github.com/user-attachments/assets/59909893-a2d4-48ca-86c0-348c8d805f4e
+
 ```mermaid
 graph LR
     A[GenAIOps Maturity Levels]
