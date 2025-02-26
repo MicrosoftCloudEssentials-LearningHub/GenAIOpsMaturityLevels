@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2025-02-19
+Last updated: 2025-02-26
 
 ----------
 
@@ -22,7 +22,8 @@ Last updated: 2025-02-19
 - [Optimize Checkpoint Performance for Large Models - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/reference-checkpoint-performance-for-large-models?view=azureml-api-2)
 - [Azure Policy compliance states](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/compliance-states)
 - [Azure Policy documentation](https://learn.microsoft.com/en-us/azure/governance/policy/)
-
+- [Analyze metrics with Azure Monitor metrics explorer](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/analyze-metrics#pin-charts-to-dashboards)
+  
 </details>
 
 ## Enhance Monitoring and Logging
@@ -30,7 +31,7 @@ Last updated: 2025-02-19
 > [!IMPORTANT]
 > The cost of your workspace depends on how much data you bring in and how long you keep it. You can find regional pricing details on the [Azure Monitor pricing page](https://azure.microsoft.com/en-us/pricing/details/monitor/). You can switch to another pricing tier after setting up your workspace. Learn more about [Log Analytics pricing models](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs#pricing-model).
 
-| Before any maturity implementation | After | 
+| Before  | After | 
 | --- | --- | 
 | <img width="550" alt="image" src="https://github.com/user-attachments/assets/dd44dc11-0f84-42f8-a451-f45a8cede608" /> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/57599fb3-2f0e-4293-8f24-c8e4d1bcfe29" /> | 
 
@@ -85,12 +86,41 @@ Last updated: 2025-02-19
 
 ### Set up alerts and dashboards for real-time insights
 
+| Before  | After | 
+| --- | --- | 
+| <img width="550" alt="image" src="https://github.com/user-attachments/assets/57599fb3-2f0e-4293-8f24-c8e4d1bcfe29" />  | <img width="550" alt="image" src="" /> | 
+
 - **Create Alerts**:
-     1. **Define Alert Rules**: In Azure Monitor, select `Alerts` and then `New alert rule`. Define the scope, condition, and action group for the alert.
-     2. **Configure Notifications**: Set up notifications to receive alerts via email, SMS, or other channels.
+     1. **Define Alert Rules**:
+
+        - In Azure Monitor, select `Alerts` and then `New alert rule`:
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/8e9d7783-8121-408c-8266-d0f804814e88" />
+
+        - Define the scope: 
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/73115fa4-1156-485f-9f60-1cacdc045730" />
+
+        - Define the condition for the alert:
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/70154f53-9d47-4856-9c1e-aabf837a9a6b" />
+
+        - Define the action group for the alert:
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/d65cc881-b328-41d8-869a-13983d57b8e1">
+
+     3. **Configure Notifications**: Set up notifications to receive alerts via email, SMS, or other channels.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/8baf2d53-ef5f-4f80-8408-c121481aa87e" />
+
 - **Create Dashboards**:
      1. **Custom Dashboards**: Use Azure Monitor to create custom dashboards. Add visualizations for key metrics and log query results.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/44bb41d7-6b63-4c41-bae1-931567639c75" />
+
      2. **Share Dashboards**: Share dashboards with your team for collaborative monitoring and real-time insights.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/429a006e-fdaa-4c0c-ba93-8d9348929161" />
 
 ## Ensure Compliance
 
@@ -125,10 +155,6 @@ Last updated: 2025-02-19
      2. **Checkpointing**: Use Nebula with ACPT on Azure Machine Learning to quickly checkpoint your model training jobs.
 - **Model Deployment**:
      1. **Deploy Models**: Deploy models using Azure Machine Learning endpoints. Monitor and optimize the deployed models for latency and throughput.
-
-
-
-
 
 
 <div align="center">
