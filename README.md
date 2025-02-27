@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2025-02-19
+Last updated: 2025-02-27
 
 ----------
 
@@ -18,6 +18,20 @@ Last updated: 2025-02-19
 - [Model monitoring for generative AI applications (preview)](https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-monitor-generative-ai-applications?view=azureml-api-2)
 
 </details>
+
+## Content 
+
+- [Level 1 - Initial: Quick Guide](./1-Level_initial.md)
+- [Level 2 - Defined: Quick Guide](./2-Level_defined.md)
+- [Level 3 - Managed: Quick Guide](./3-Level_managed.md)
+- [Level 4 - Optimized: Quick Guide](./4-Level_optimized.md)
+
+## Overview 
+
+> [!IMPORTANT]
+> Please take this [GenAIOps Maturity Model Assessment](https://learn.microsoft.com/en-us/assessments/e14e1e9f-d339-4d7e-b2bb-24f056cf08b6/) to determine your current level of maturity. 
+
+https://github.com/user-attachments/assets/59909893-a2d4-48ca-86c0-348c8d805f4e
 
 ```mermaid
 graph LR
