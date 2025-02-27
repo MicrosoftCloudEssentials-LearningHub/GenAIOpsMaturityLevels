@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2025-02-19
+Last updated: 2025-02-27
 
 ----------
 
@@ -22,6 +22,10 @@ Last updated: 2025-02-19
 - [Optimize Checkpoint Performance for Large Models - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/reference-checkpoint-performance-for-large-models?view=azureml-api-2)
 - [Azure Policy compliance states](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/compliance-states)
 - [Azure Policy documentation](https://learn.microsoft.com/en-us/azure/governance/policy/)
+- [Analyze metrics with Azure Monitor metrics explorer](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/analyze-metrics#pin-charts-to-dashboards)
+- [Tutorial: Build policies to enforce compliance - Azure Policy](https://learn.microsoft.com/en-us/azure/governance/policy/tutorials/create-and-manage)
+- [Quickstart: Create policy assignment using Azure portal - Azure Policy](https://learn.microsoft.com/en-us/azure/governance/policy/assign-policy-portal)
+- [Tutorial: Create a custom policy definition - Azure Policy](https://learn.microsoft.com/en-us/azure/governance/policy/tutorials/create-custom-policy-definition)
 
 </details>
 
@@ -30,7 +34,7 @@ Last updated: 2025-02-19
 > [!IMPORTANT]
 > The cost of your workspace depends on how much data you bring in and how long you keep it. You can find regional pricing details on the [Azure Monitor pricing page](https://azure.microsoft.com/en-us/pricing/details/monitor/). You can switch to another pricing tier after setting up your workspace. Learn more about [Log Analytics pricing models](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs#pricing-model).
 
-| Before any maturity implementation | After | 
+| Before  | After | 
 | --- | --- | 
 | <img width="550" alt="image" src="https://github.com/user-attachments/assets/dd44dc11-0f84-42f8-a451-f45a8cede608" /> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/57599fb3-2f0e-4293-8f24-c8e4d1bcfe29" /> | 
 
@@ -85,20 +89,125 @@ Last updated: 2025-02-19
 
 ### Set up alerts and dashboards for real-time insights
 
+| Before  | After | 
+| --- | --- | 
+| <img width="550" alt="image" src="https://github.com/user-attachments/assets/57599fb3-2f0e-4293-8f24-c8e4d1bcfe29" />  | <img width="550" alt="image" src="https://github.com/user-attachments/assets/8bf9fde7-9909-4af9-8e8e-f25376e1db96" /> | 
+
 - **Create Alerts**:
-     1. **Define Alert Rules**: In Azure Monitor, select `Alerts` and then `New alert rule`. Define the scope, condition, and action group for the alert.
-     2. **Configure Notifications**: Set up notifications to receive alerts via email, SMS, or other channels.
+     1. **Define Alert Rules**:
+
+        - In Azure Monitor, select `Alerts` and then `New alert rule`:
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/8e9d7783-8121-408c-8266-d0f804814e88" />
+
+        - Define the scope: 
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/73115fa4-1156-485f-9f60-1cacdc045730" />
+
+        - Define the condition for the alert:
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/70154f53-9d47-4856-9c1e-aabf837a9a6b" />
+
+        - Define the action group for the alert:
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/d65cc881-b328-41d8-869a-13983d57b8e1">
+
+     3. **Configure Notifications**: Set up notifications to receive alerts via email, SMS, or other channels.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/8baf2d53-ef5f-4f80-8408-c121481aa87e" />
+
 - **Create Dashboards**:
      1. **Custom Dashboards**: Use Azure Monitor to create custom dashboards. Add visualizations for key metrics and log query results.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/44bb41d7-6b63-4c41-bae1-931567639c75" />
+
      2. **Share Dashboards**: Share dashboards with your team for collaborative monitoring and real-time insights.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/429a006e-fdaa-4c0c-ba93-8d9348929161" />
 
 ## Ensure Compliance
 
 ### Adhere to best practices and compliance standards
 
-- **Define Policies**:
-     1. **Create Policies**: Use Azure Policy to define and assign policies that enforce compliance. Create policies for resource configurations, tagging, and security standards.
-     2. **Assign Policies**: Assign policies to your resources to ensure they adhere to compliance standards.
+1. **Create Policies**:
+      
+      | **Policy Component**  | **Description**                                                                                   |
+      |-----------------------|---------------------------------------------------------------------------------------------------|
+      | **Azure Policy**      | Use Azure Policy to create policies that enforce compliance across your resources. Policies can be defined for various aspects such as resource configurations, tagging, and security standards.  |
+      | **Policy Definitions**| Write policy definitions that specify the desired state of your resources. For example, you can create a policy to ensure all resources have specific tags or that certain configurations are enforced. |
+      | **Policy Initiatives**| Group multiple policies into initiatives to manage them as a single unit. This is useful for enforcing a set of related policies across your environment.    |
+
+      **Azure Policy**:
+         - **Navigate to Azure Policy**:
+           1. Sign in to the [Azure portal](https://portal.azure.com/).
+           2. In the search bar, type `Policy` and select `Policy` from the results.
+      
+      **Policy Definitions**:
+         - **Create a Policy Definition**:
+           1. In the Azure Policy dashboard, select `Definitions` from the left-hand menu.
+           2. Click on `+ Policy definition` to create a new policy.
+           3. Fill in the required fields:
+              - **Definition location**: Select the scope (management group or subscription) where the policy will be available.
+              - **Name**: Provide a name for the policy.
+              - **Description**: Add a description to explain the purpose of the policy.
+              - **Category**: Choose a category or create a new one.
+           4. In the `Policy rule` section, define the policy rule using JSON. For example, to ensure all resources have a specific tag:
+              ```json
+              {
+                "if": {
+                  "field": "[resourceType]",
+                  "equals": "Microsoft.Resources/subscriptions/resourceGroups"
+                },
+                "then": {
+                  "effect": "append",
+                  "details": {
+                    "field": "tags",
+                    "value": {
+                      "Environment": "Production"
+                    }
+                  }
+                }
+              }
+              ```
+           5. Click `Save` to create the policy definition.
+      
+      **Policy Initiatives**:
+         - **Create a Policy Initiative**:
+           1. In the Azure Policy dashboard, select `Initiatives` from the left-hand menu.
+           2. Click on `+ Initiative definition` to create a new initiative.
+           3. Fill in the required fields:
+              - **Definition location**: Select the scope (management group or subscription) where the initiative will be available.
+              - **Name**: Provide a name for the initiative.
+              - **Description**: Add a description to explain the purpose of the initiative.
+              - **Category**: Choose a category or create a new one.
+           4. Add policies to the initiative by selecting `Add policy` and choosing the relevant policy definitions.
+           5. Click `Save` to create the initiative.
+              
+
+2. **Assign Policies**:
+       
+      | **Assignment Component**       | **Description**                                                                                   |
+      |-------------------------------|---------------------------------------------------------------------------------------------------|
+      | **Scope Assignment**          | Assign policies to specific scopes such as subscriptions, resource groups, or individual resources. This ensures that the policies are applied to the relevant resources.  |
+      | **Policy Assignment Parameters**| Configure parameters for policy assignments to customize their behavior. For example, you can specify which tags should be enforced or which configurations should be checked. |
+
+      **Scope Assignment**:
+         - **Assign a Policy**:
+           1. In the Azure Policy dashboard, select `Assignments` from the left-hand menu.
+           2. Click on `+ Assign policy` to create a new policy assignment.
+           3. Fill in the required fields:
+              - **Scope**: Select the scope (management group, subscription, or resource group) where the policy will be enforced.
+              - **Policy definition**: Choose the policy definition you created earlier.
+              - **Assignment name**: Provide a name for the policy assignment.
+           4. Optionally, configure exclusions to exclude specific resources from the policy.
+           5. Click `Next` to configure parameters.
+      
+      **Policy Assignment Parameters**:
+         - **Configure Parameters**:
+           1. If the policy definition includes parameters, configure them as needed. For example, specify the tag key and value to be enforced.
+           2. Click `Next` to review and create the policy assignment.
+           3. Click `Create` to finalize the policy assignment.
+
 
 ### Use Azure Policy to enforce compliance rules
 
@@ -125,10 +234,6 @@ Last updated: 2025-02-19
      2. **Checkpointing**: Use Nebula with ACPT on Azure Machine Learning to quickly checkpoint your model training jobs.
 - **Model Deployment**:
      1. **Deploy Models**: Deploy models using Azure Machine Learning endpoints. Monitor and optimize the deployed models for latency and throughput.
-
-
-
-
 
 
 <div align="center">
