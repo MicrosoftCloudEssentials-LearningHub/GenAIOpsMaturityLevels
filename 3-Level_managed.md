@@ -29,6 +29,23 @@ Last updated: 2025-02-27
 
 </details>
 
+## Content 
+
+- [Content](#content)
+- [Enhance Monitoring and Logging](#enhance-monitoring-and-logging)
+   - [Use Azure Monitor and Log Analytics for comprehensive monitoring](#use-azure-monitor-and-log-analytics-for-comprehensive-monitoring)
+   - [Set up alerts and dashboards for real-time insights](#set-up-alerts-and-dashboards-for-real-time-insights)
+- [Ensure Compliance](#ensure-compliance)
+   - [Adhere to best practices and compliance standards](#adhere-to-best-practices-and-compliance-standards)
+       - [Create Policies](#create-policies)
+       - [Assign Policies](#assign-policies)
+   - [Use Azure Policy to enforce compliance rules](#use-azure-policy-to-enforce-compliance-rules)
+- [Optimize Performance](#optimize-performance)
+   - [Implement performance optimization techniques](#implement-performance-optimization-techniques)
+   - [Use Azure Machine Learning for model training and fine-tuning](#use-azure-machine-learning-for-model-training-and-fine-tuning)
+
+
+
 ## Enhance Monitoring and Logging
 
 > [!IMPORTANT]
