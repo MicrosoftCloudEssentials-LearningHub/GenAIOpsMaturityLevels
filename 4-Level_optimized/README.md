@@ -103,7 +103,7 @@ Click here to read more about [Implement Advanced Analytics](./1_ImplementAdvanc
 > If you are considering Azure Data Factory, Azure Synapse Analytics, and Power Bi please consider Microsoft Fabric. Click here to review an [essentials workshop about Microsoft Fabric](https://github.com/MicrosoftCloudEssentials-LearningHub/MS-Fabric-Essentials-Workshop).
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/8fdb3198-8fda-4dd0-869e-b0dccb268a30" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+  <img src="https://github.com/user-attachments/assets/8fdb3198-8fda-4dd0-869e-b0dccb268a30" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px; width: 70%; height: auto;" />
 </div>
 
 From [Microsoft Documentation](https://learn.microsoft.com/pt-br/fabric/fundamentals/microsoft-fabric-overview)
@@ -118,6 +118,12 @@ Click here to read more about [Machine Learning Operations (MLOps)](./2_MLOps.md
 
 ## Evaluation of GenAI Applications
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/cb4d2d89-380c-4ef9-b016-42c606a735b4" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px; width: 70%; height: auto;"/>
+</div>
+
+From [Microsoft Documentation](https://learn.microsoft.com/en-us/azure/ai-studio/concepts/evaluation-approach-gen-ai)
+
 ### Base Model Selection
 
 - **Model Comparison**: Compare different models by testing their outputs against criteria relevant to your application. Consider accuracy, performance, and ethical considerations.
@@ -126,6 +132,12 @@ Click here to read more about [Machine Learning Operations (MLOps)](./2_MLOps.md
 
 - **Evaluation Data**: Use your own evaluation data to test AI applications in pre-production. Utilize Azure AI Foundry or Azure AI Evaluation SDK’s supported evaluators.
 - **Quality and Safety**: Assess generation quality, safety, and custom evaluators to ensure the application meets desired standards.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/11e15924-c290-420b-b0f3-fe5384be1132" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px; width: 70%; height: auto;"/>
+</div>
+
+From [Microsoft Documentation](https://learn.microsoft.com/en-us/azure/ai-studio/concepts/evaluation-approach-gen-ai)
 
 ### Post-production Monitoring
 
