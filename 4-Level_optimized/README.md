@@ -32,6 +32,12 @@ Last updated: 2025-02-27
 - [Resource access management in Azure](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/get-started/how-azure-resource-manager-works)
 - [Towards Inclusive Software Engineering Through - A/B Testing: A Case-Study at Windows](https://www.microsoft.com/en-us/research/uploads/prod/2021/02/AB_Testing_For_Inclusive_and_Equitable_Engineering.pdf)
 - [Implement A/B testing and progressive exposure deployment](https://learn.microsoft.com/en-us/training/modules/implement-test-progressive-exposure-deployment/)
+- [Quickstart: Create an Azure Synapse Analytics workspace](https://learn.microsoft.com/en-us/azure/synapse-analytics/quickstart-create-workspace)
+- [Tutorial: Analyze Azure Open Datasets in Synapse Studio](https://learn.microsoft.com/en-us/azure/synapse-analytics/sql/tutorial-data-analyst)
+- [Visualize data with Apache Spark - Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-data-visualization-tutorial)
+- [Connect to cloud data sources in the Power BI service](https://learn.microsoft.com/en-us/power-bi/connect-data/service-connect-cloud-data-sources)
+- [Azure and Power BI](https://learn.microsoft.com/en-us/power-bi/connect-data/service-azure-and-power-bi)
+- [Load data into Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/data-factory/load-azure-sql-data-warehouse)
 
 </details>
 
@@ -360,14 +366,72 @@ graph TD;
 
 ### Advanced Analytics
 
-- **Azure Synapse Analytics**:
-   1. **Set Up Synapse Workspace**: Create a Synapse workspace in the Azure portal.
-   2. **Data Integration**: Integrate data from various sources for comprehensive analysis.
-   3. **Analytics and Visualization**: Use Synapse Studio to perform advanced analytics and visualize data insights.
+> - **Azure Synapse Analytics**: <br/>
+>    1. **Set Up Synapse Workspace**: Create a Synapse workspace in the Azure portal. <br/>
+>    2. **Data Integration**: Integrate data from various sources for comprehensive analysis. <br/>
+>    3. **Analytics and Visualization**: Use Synapse Studio to perform advanced analytics and visualize data insights. <br/>
+> - **Power BI**: <br/>
+>    1. **Create Power BI Reports**: Develop interactive reports and dashboards to visualize LLM performance and usage patterns. <br/>
+>    2. **Data Connectivity**: Connect Power BI to Azure data sources for real-time insights.
 
-- **Power BI**:
-   1. **Create Power BI Reports**: Develop interactive reports and dashboards to visualize LLM performance and usage patterns.
-   2. **Data Connectivity**: Connect Power BI to Azure data sources for real-time insights.
+> [!NOTE]
+> If you are considering Azure Data Factory, Azure Synapse Analytics, and Power Bi please consider Microsoft Fabric. Click here to review an [essentials workshop about Microsoft Fabric](https://github.com/MicrosoftCloudEssentials-LearningHub/MS-Fabric-Essentials-Workshop).
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/8fdb3198-8fda-4dd0-869e-b0dccb268a30" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>
+
+From [Microsoft Documentation](https://learn.microsoft.com/pt-br/fabric/fundamentals/microsoft-fabric-overview)
+
+#### Azure Synapse Analytics: Set up synapse workspace
+1. **Sign in to Azure Portal**: Go to the [Azure portal](https://portal.azure.com/) and sign in with your Azure account credentials.
+2. **Search for Synapse**: In the search bar at the top of the Azure portal, type `Synapse` and select `Azure Synapse Analytics` from the search results.
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/6df7d1d4-458b-4dc7-a13c-971fb5c60ca9" />
+
+3. **Create a New Synapse Workspace**:
+     - Click on the `+ Create` button to start the creation process.
+     - Fill in the required fields:
+          - **Subscription**: Select the Azure subscription you want to use.
+          - **Resource Group**: Choose an existing resource group or create a new one.
+          - **Workspace Name**: Provide a unique name for your Synapse workspace.
+          - **Region**: Select the region where you want to create the workspace.
+          - **Data Lake Storage Gen2**: Select or create a Data Lake Storage Gen2 account to use as the primary storage account.
+     - Click `Review + Create` and then `Create` to finalize the creation.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/23200833-82f3-4ab0-80de-2c88a0574415" />
+
+#### Azure Synapse Analytics: Data integration
+
+1. **Open Synapse Studio**:
+     - After the Synapse workspace is created, navigate to it in the Azure portal.
+     - Click on `Open Synapse Studio` from the workspace overview.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/44855c8b-484d-40f1-b01d-979284de37be" />
+
+2. **Integrate Data**:
+     - In Synapse Studio, go to the `Data` hub.
+     - Click on `+` and select `Linked service` to connect to various data sources (e.g., Azure SQL Database, Azure Blob Storage, on-premises databases).
+     - Configure the linked service by providing the necessary connection details and credentials.
+     - Create datasets to represent the data you want to integrate and use in your pipelines.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/71917d70-3068-47ac-bd1a-6d8e3129c1ac" />
+
+#### Azure Synapse Analytics: Analytics and visualization
+
+1. **Create Notebooks**:
+     - In Synapse Studio, go to the `Develop` hub.
+     - Click on `+` and select `Notebook` to create a new notebook.
+
+          <img width="718" alt="image" src="https://github.com/user-attachments/assets/55680c4a-73c2-45c0-be30-8994a77b1ad8" />
+
+     - Use the notebook to perform data analysis using languages like PySpark, SQL, or Scala.
+
+
+2. **Visualize Data**:
+     - Use built-in visualization libraries (e.g., Matplotlib, Seaborn) to create charts and graphs within the notebook.
+     - Alternatively, use Synapse Studio's built-in visualization tools to create interactive visualizations.
+
 
 ### Machine Learning Operations (MLOps)
 
