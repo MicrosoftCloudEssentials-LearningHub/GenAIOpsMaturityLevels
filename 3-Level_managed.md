@@ -129,84 +129,111 @@ Last updated: 2025-02-27
 
 ### Adhere to best practices and compliance standards
 
-1. **Create Policies**:
-      
-      | **Policy Component**  | **Description**                                                                                   |
-      |-----------------------|---------------------------------------------------------------------------------------------------|
-      | **Azure Policy**      | Use Azure Policy to create policies that enforce compliance across your resources. Policies can be defined for various aspects such as resource configurations, tagging, and security standards.  |
-      | **Policy Definitions**| Write policy definitions that specify the desired state of your resources. For example, you can create a policy to ensure all resources have specific tags or that certain configurations are enforced. |
-      | **Policy Initiatives**| Group multiple policies into initiatives to manage them as a single unit. This is useful for enforcing a set of related policies across your environment.    |
+#### Create Policies
+ 
+ | **Policy Component**  | **Description**                                                                                   |
+ |-----------------------|---------------------------------------------------------------------------------------------------|
+ | **Azure Policy**      | Use Azure Policy to create policies that enforce compliance across your resources. Policies can be defined for various aspects such as resource configurations, tagging, and security standards.  |
+ | **Policy Definitions**| Write policy definitions that specify the desired state of your resources. For example, you can create a policy to ensure all resources have specific tags or that certain configurations are enforced. |
+ | **Policy Initiatives**| Group multiple policies into initiatives to manage them as a single unit. This is useful for enforcing a set of related policies across your environment.    |
 
-      **Azure Policy**:
-         - **Navigate to Azure Policy**:
-           1. Sign in to the [Azure portal](https://portal.azure.com/).
-           2. In the search bar, type `Policy` and select `Policy` from the results.
-      
-      **Policy Definitions**:
-         - **Create a Policy Definition**:
-           1. In the Azure Policy dashboard, select `Definitions` from the left-hand menu.
-           2. Click on `+ Policy definition` to create a new policy.
-           3. Fill in the required fields:
-              - **Definition location**: Select the scope (management group or subscription) where the policy will be available.
-              - **Name**: Provide a name for the policy.
-              - **Description**: Add a description to explain the purpose of the policy.
-              - **Category**: Choose a category or create a new one.
-           4. In the `Policy rule` section, define the policy rule using JSON. For example, to ensure all resources have a specific tag:
-              ```json
-              {
-                "if": {
-                  "field": "[resourceType]",
-                  "equals": "Microsoft.Resources/subscriptions/resourceGroups"
-                },
-                "then": {
-                  "effect": "append",
-                  "details": {
-                    "field": "tags",
-                    "value": {
-                      "Environment": "Production"
-                    }
-                  }
-                }
-              }
-              ```
-           5. Click `Save` to create the policy definition.
-      
-      **Policy Initiatives**:
-         - **Create a Policy Initiative**:
-           1. In the Azure Policy dashboard, select `Initiatives` from the left-hand menu.
-           2. Click on `+ Initiative definition` to create a new initiative.
-           3. Fill in the required fields:
-              - **Definition location**: Select the scope (management group or subscription) where the initiative will be available.
-              - **Name**: Provide a name for the initiative.
-              - **Description**: Add a description to explain the purpose of the initiative.
-              - **Category**: Choose a category or create a new one.
-           4. Add policies to the initiative by selecting `Add policy` and choosing the relevant policy definitions.
-           5. Click `Save` to create the initiative.
-              
+- **Azure Policy**:
+     1. Sign in to the [Azure portal](https://portal.azure.com/).
+     2. In the search bar, type `Policy` and select `Policy` from the results.
 
-2. **Assign Policies**:
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/8dd5008a-56b4-4ffd-98fe-c5c4149d9f2a" />
+
+- **Policy Definitions**: Create a policy definition.
+     
+     1. In the Azure Policy dashboard, select `Definitions` from the left-hand menu.
+     2. Click on `+ Policy definition` to create a new policy.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/7e03407e-4074-432e-8d41-72c6a157b7a9" />
+
+     3. Fill in the required fields:
+          - **Definition location**: Select the scope (management group or subscription) where the policy will be available.
+          - **Name**: Provide a name for the policy.
+          - **Description**: Add a description to explain the purpose of the policy.
+          - **Category**: Choose a category or create a new one.
+
+               <img width="550" alt="image" src="https://github.com/user-attachments/assets/f0a3c647-05de-41ac-8af1-48cff361fdc2" />
+
+     4. In the `Policy rule` section, define the policy rule using JSON. For example, to ensure all resources have a specific tag:
+
+          ```json
+          {
+           "if": {
+             "field": "[resourceType]",
+             "equals": "Microsoft.Resources/subscriptions/resourceGroups"
+           },
+           "then": {
+             "effect": "append",
+             "details": {
+               "field": "tags",
+               "value": {
+                 "Environment": "Production"
+               }
+             }
+           }
+          }
+          ```
+        
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/2374221b-484e-41f7-95b2-e193c9322931" />
+
+     5. Click `Save` to create the policy definition.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/d787c6a9-f49c-4bb9-93df-5d59a079bfcc" />
+
+-  **Policy Initiatives**: Create a policy initiative.
+      1. In the Azure Policy dashboard, select `Initiatives` from the left-hand menu.
+      2. Click on `+ Initiative definition` to create a new initiative.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/4d209c8a-e368-4550-a969-b7f06a7af465" />
+
+      3. Fill in the required fields:
+         - **Definition location**: Select the scope (management group or subscription) where the initiative will be available.
+         - **Name**: Provide a name for the initiative.
+         - **Description**: Add a description to explain the purpose of the initiative.
+         - **Category**: Choose a category or create a new one.
+
+              <img width="550" alt="image" src="https://github.com/user-attachments/assets/96156e08-5a6b-4b88-9abe-6df842aff392" />
+
+      4. Add policies to the initiative by selecting `Add policy` and choosing the relevant policy definitions.
+
+         <img width="550" alt="image" src="https://github.com/user-attachments/assets/ab4d17cc-e1a4-49ac-aadd-8dfdea6e615e" />
+
+      5. Click `Create` to create the initiative.
+         
+
+#### Assign Policies
        
-      | **Assignment Component**       | **Description**                                                                                   |
-      |-------------------------------|---------------------------------------------------------------------------------------------------|
-      | **Scope Assignment**          | Assign policies to specific scopes such as subscriptions, resource groups, or individual resources. This ensures that the policies are applied to the relevant resources.  |
-      | **Policy Assignment Parameters**| Configure parameters for policy assignments to customize their behavior. For example, you can specify which tags should be enforced or which configurations should be checked. |
+| **Assignment Component**       | **Description**                                                                                   |
+|-------------------------------|---------------------------------------------------------------------------------------------------|
+| **Scope Assignment**          | Assign policies to specific scopes such as subscriptions, resource groups, or individual resources. This ensures that the policies are applied to the relevant resources.  |
+| **Policy Assignment Parameters**| Configure parameters for policy assignments to customize their behavior. For example, you can specify which tags should be enforced or which configurations should be checked. |
 
-      **Scope Assignment**:
-         - **Assign a Policy**:
-           1. In the Azure Policy dashboard, select `Assignments` from the left-hand menu.
-           2. Click on `+ Assign policy` to create a new policy assignment.
-           3. Fill in the required fields:
-              - **Scope**: Select the scope (management group, subscription, or resource group) where the policy will be enforced.
-              - **Policy definition**: Choose the policy definition you created earlier.
-              - **Assignment name**: Provide a name for the policy assignment.
-           4. Optionally, configure exclusions to exclude specific resources from the policy.
-           5. Click `Next` to configure parameters.
-      
-      **Policy Assignment Parameters**:
-         - **Configure Parameters**:
-           1. If the policy definition includes parameters, configure them as needed. For example, specify the tag key and value to be enforced.
-           2. Click `Next` to review and create the policy assignment.
-           3. Click `Create` to finalize the policy assignment.
+- **Scope Assignment**: Assign a policy.
+     1. In the Azure Policy dashboard, select `Assignments` from the left-hand menu.
+     2. Click on `+ Assign policy` to create a new policy assignment.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/159fd69a-bef0-47ef-99c2-a8576538e9af" />
+
+     3. Fill in the required fields:
+          - **Scope**: Select the scope (management group, subscription, or resource group) where the policy will be enforced.
+          - **Policy definition**: Choose the policy definition you created earlier.
+          - **Assignment name**: Provide a name for the policy assignment.
+     4. Optionally, configure exclusions to exclude specific resources from the policy.
+     5. Click `Next` to configure parameters.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/b242e0bc-ecd6-402e-9413-ed99963d64e4" />
+
+- Policy assignment parameters: Configure parameters.
+      1. If the policy definition includes parameters, configure them as needed. For example, specify the tag key and value to be enforced.
+      2. Click `Next` to review and create the policy assignment.
+      3. Click `Create` to finalize the policy assignment.
+       
+   https://github.com/user-attachments/assets/5a0a7ac5-db43-4751-af84-e99ffbb3c072
+
 
 
 ### Use Azure Policy to enforce compliance rules
