@@ -43,6 +43,18 @@ Last updated: 2025-02-27
 
 ## Content
 
+- [Content](#content)
+- [Implement Advanced Automation](#implement-advanced-automation)
+- [Continuous Improvement Practices](#continuous-improvement-practices)
+- [Leverage Cutting-Edge Tools and Techniques](#leverage-cutting-edge-tools-and-techniques)
+    - [Latest Azure AI Services](#latest-azure-ai-services)
+    - [Advanced Analytics](#advanced-analytics)
+    - [Machine Learning Operations MLOps](#machine-learning-operations-mlops)
+- [Evaluation of GenAI Applications](#evaluation-of-genai-applications)
+    - [Base Model Selection](#base-model-selection)
+    - [Pre-production Evaluation](#pre-production-evaluation)
+    - [Post-production Monitoring](#post-production-monitoring)
+
 ## Implement Advanced Automation
 
 | Category                        | Details                                                                 | When to Use                                                                 |
