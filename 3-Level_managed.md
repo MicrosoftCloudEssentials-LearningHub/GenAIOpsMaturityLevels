@@ -245,10 +245,10 @@ Last updated: 2025-02-27
           <img width="550" alt="image" src="https://github.com/user-attachments/assets/b242e0bc-ecd6-402e-9413-ed99963d64e4" />
 
 - Policy assignment parameters: Configure parameters.
-      1. If the policy definition includes parameters, configure them as needed. For example, specify the tag key and value to be enforced.
-      2. Click `Next` to review and create the policy assignment.
-      3. Click `Create` to finalize the policy assignment.
-       
+   1. If the policy definition includes parameters, configure them as needed. For example, specify the tag key and value to be enforced.
+   2. Click `Next` to review and create the policy assignment.
+   3. Click `Create` to finalize the policy assignment.
+    
    https://github.com/user-attachments/assets/5a0a7ac5-db43-4751-af84-e99ffbb3c072
 
 
