@@ -24,6 +24,12 @@ Last updated: 2025-02-27
 - [MLOps and GenAIOps for AI workloads on Azure](https://learn.microsoft.com/en-us/azure/well-architected/ai/mlops-genaiops)
 - [Model catalog and collections in Azure AI Foundry portal](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-catalog-overview)
 - [Evaluation of generative AI applications with Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/concepts/evaluation-approach-gen-ai)
+- [What is Azure Logic Apps?](https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview)
+- [What is Azure Data Factory?](https://learn.microsoft.com/en-us/azure/data-factory/introduction)
+- [Common scenarios, examples, tutorials, and walkthroughs for Azure Logic Apps](https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-examples-and-scenarios)
+- [Data Factory - Connector overview](https://learn.microsoft.com/en-us/fabric/data-factory/connector-overview)
+- [What is Azure Resource Manager](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview)
+- [Resource access management in Azure](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/get-started/how-azure-resource-manager-works)
 
 </details>
 
@@ -43,7 +49,7 @@ Last updated: 2025-02-27
 2. **Runbooks**: Develop runbooks to automate routine tasks. Use PowerShell or Python scripts to define the automation logic.
 3. **Schedules and Webhooks**: Schedule runbooks to run at specific times or trigger them via webhooks for event-driven automation.
 
-####  Create an Automation Account
+####  Azure Automation: Create an Automation Account
 
 1. **Sign in to Azure Portal**: Go to the [Azure portal](https://portal.azure.com) and sign in with your Azure account credentials.
 2. **Search for Automation Accounts**: In the search bar at the top of the Azure portal, type `Automation Accounts` and select it from the search results.
@@ -61,7 +67,7 @@ Last updated: 2025-02-27
 
        <img width="550" alt="image" src="https://github.com/user-attachments/assets/e41d8168-31b6-4c46-ad78-18522efcc2cd" />
 
-#### Develop Runbooks
+#### Azure Automation: Develop Runbooks
 
 1. **Navigate to Your Automation Account**: After the Automation Account is created, navigate to it by selecting it from the list of Automation Accounts.
 
@@ -87,97 +93,248 @@ Last updated: 2025-02-27
 3. **Edit the Runbook**:
    - After creating the runbook, you will be taken to the runbook editor.
    - Write your automation logic using PowerShell or Python scripts.
-      > For example: Click [here to review all code](./src/update_vm_and_python_libraries.py)
-
-          ```python
-          import os
-          from azure.identity import DefaultAzureCredential
-          from azure.mgmt.compute import ComputeManagementClient
-          import subprocess
-          
-          # Parameters
-          resource_group_name = os.environ.get("ResourceGroupName")
-          vm_name = os.environ.get("VMName")
-          
-          # Authenticate
-          credential = DefaultAzureCredential()
-          compute_client = ComputeManagementClient(credential, os.environ.get("AZURE_SUBSCRIPTION_ID"))
-          
-          # Function to check VM status
-          def get_vm_status(resource_group_name, vm_name):
-              vm = compute_client.virtual_machines.get(resource_group_name, vm_name, expand='instanceView')
-              statuses = vm.instance_view.statuses
-              for status in statuses:
-                  if 'PowerState' in status.code:
-                      return status.code.split('/')[-1]
-              return None
-          
-          # Check VM status
-          vm_status = get_vm_status(resource_group_name, vm_name)
-          print(f"Current VM status: {vm_status}")
-          
-          # Start VM if it's not running
-          if vm_status != 'running':
-              print(f"Starting VM: {vm_name} in resource group: {resource_group_name}")
-              async_vm_start = compute_client.virtual_machines.begin_start(resource_group_name, vm_name)
-              async_vm_start.result()
-              print(f"Started VM: {vm_name} in resource group: {resource_group_name}")
-          else:
-              print(f"VM: {vm_name} is already running in resource group: {resource_group_name}")
-          
-          # Update Python core libraries
-          def update_python_libraries():
-              try:
-                  subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", "pip"])
-                  subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", "setuptools"])
-                  subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", "wheel"])
-                  print("Python core libraries updated successfully.")
-              except subprocess.CalledProcessError as e:
-                  print(f"Error updating Python libraries: {e}")
-          
-          # Update libraries
-          update_python_libraries()
-          ```
-
-        > Another example, a simple PowerShell script to start a VM might:
-             ```powershell
-             param(
-                 [string]$ResourceGroupName,
-                 [string]$VMName
-             )
-        
-             Start-AzVM -ResourceGroupName $ResourceGroupName -Name $VMName
-             ```
+      > For example [Start or Validate VM Status and Update Python Core Libraries](./src/update_vm_and_python_libraries.py)
+      > or a simple PowerShell script to start a VM:
+        ```powershell
+        param(
+            [string]$ResourceGroupName,
+            [string]$VMName
+        )
+   
+        Start-AzVM -ResourceGroupName $ResourceGroupName -Name $VMName
+        ```
    - Click `Save` to save your script.
-
 4. **Publish the Runbook**: After saving the runbook, click `Publish` to make it available for execution.
 
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/a81f903e-ac6d-468f-9d78-6c3e1339d551" />
 
-- **Logic Apps**:
-   1. **Create a Logic App**: In the Azure portal, search for `Logic Apps` and create a new logic app.
-   2. **Design Workflows**: Use the visual designer to create workflows that integrate various services and automate processes.
-   3. **Connectors**: Utilize built-in connectors to integrate with Azure services, third-party applications, and on-premises systems.
 
-- **Azure Functions**:
-   1. **Create a Function App**: In the Azure portal, search for `Function Apps` and create a new function app.
-   2. **Develop Functions**: Write serverless functions in languages like C#, JavaScript, or Python to handle specific tasks.
-   3. **Triggers and Bindings**: Configure triggers to execute functions based on events and bindings to connect to other services.
+#### Azure Automation: Schedule Runbooks and Set Up Webhooks
+
+1. **Schedule a Runbook**:
+     - In the runbook's overview page, select `Schedules` under the `Resources` section.
+     - Click on `+ Add a schedule` to create a new schedule.
+     
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/8567ffa2-4d7c-4e23-87f7-494a5a563b3a" />
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/7f81b0e2-84dc-4fd9-92d3-a90209c20512">
+
+     - Fill in the required fields:
+          - **Name**: Provide a name for the schedule.
+          - **Description**: Optionally, add a description for the schedule.
+          - **Start Time**: Set the start time for the schedule.
+          - **Recurrence**: Choose the recurrence pattern (e.g., one-time, daily, weekly).
+     - Click `Create` to create the schedule.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/255f8c15-c1d9-49a9-a344-e19c6d442235" />
+
+     - Link the schedule to the runbook by selecting the schedule and clicking `OK`.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/0f7ddd74-b5c0-46e4-931f-b3832ae74535" />
+
+2. **Set Up a Webhook**:
+     - In the runbook's overview page, select `Webhooks` under the `Resources` section.
+     - Click on `+ Add webhook` to create a new webhook.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/93c6c4ff-8e5a-4ebc-9fd4-fc91bdaed591" />
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/6017e040-58fd-4e9d-86c4-5af45d677533" />
+
+   - Fill in the required fields:
+     - **Name**: Provide a name for the webhook.
+     - **Enabled**: Choose whether the webhook is enabled or disabled.
+     - **Expiry Date**: Set an expiry date for the webhook.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/0c6e4d89-69a1-47fc-8f5e-1f5ca226e0f3" />
+
+     - Click `Create` to create the webhook.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/ed36b99c-840d-44b5-881c-2dd0a4d40f88" />
+
+   - Copy the webhook URL and use it to trigger the runbook from external systems or applications.
+     
+
+#### Logic Apps: Create a Logic App
+
+> [!NOTE]
+> Please create a logic app if you do not already have one or need a specific resource for this purpose. Click here to learn more about [Logic App hosting options](https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview#create-and-deploy-to-different-environments)
+
+1. **Sign in to Azure Portal**: Go to the [Azure portal](https://portal.azure.com/) and sign in with your Azure account credentials.
+2. **Search for Logic Apps**: In the search bar at the top of the Azure portal, type `Logic Apps` and select it from the search results.
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/7c740f24-85cc-4428-a5a9-f82cbd5f5a43" />
+
+3. **Create a New Logic App**:
+   - Click on the `+ Create` button to start the creation process.
+   - Fill in the required fields:
+     - **Subscription**: Select the Azure subscription you want to use.
+     - **Resource Group**: Choose an existing resource group or create a new one.
+     - **Logic App Name**: Provide a unique name for your Logic App.
+     - **Region**: Select the region where you want to create the Logic App.
+     - **Plan Type**: Choose between `Consumption` (pay-per-use) or `Standard` (fixed pricing).
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/2a2e298f-e6e7-4f2e-be3d-7b64d26114a4" />
+
+   - Click `Review + Create` and then `Create` to finalize the creation.
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/49438da5-9cfb-4f0d-b54b-00e4a7401253">
+
+#### Logic Apps: Use Connectors
+
+| Action                         | Description                                                                 |
+|------------------------------|-----------------------------------------------------------------------------|
+| **Explore Built-in Connectors** | - Logic Apps provides a wide range of built-in connectors to integrate with various services, including Azure services, third-party applications, and on-premises systems.<br>- In the Logic App Designer, click on `+` and browse the list of connectors. |
+| **Add Connectors to Your Workflow** | - Select the connector you want to use (e.g., `Office 365 Outlook`, `Azure Blob Storage`).<br>- Configure the connector by providing the necessary authentication details and parameters. |
+| **Custom Connectors**        | - If a built-in connector is not available for your specific service, you can create a custom connector.<br>- In the Azure portal, search for `Custom connectors` and follow the steps to create and configure a custom connector. |
+
+#### Logic Apps: Create Workflow
+
+1. **Go to Your Logic App**: After the Logic App is created, navigate to it by selecting it from the list of Logic Apps.
+2. **Create a workflow**: Under Workflows, click on `+ Add`:
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/436d3843-8d23-4898-b9c8-def5c5579fec" />
+
+3. The Logic App Designer provides a visual interface to create and manage workflows, for that click on workflow created:
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/d6e7720d-144b-491a-aeeb-f14e3794bb96" />
+
+4. **Add a Trigger**:
+     - Every Logic App workflow starts with a trigger. Click on `New step` and search for a trigger that suits your needs (e.g., `When a HTTP request is received`, `Recurrence` for scheduled workflows).
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/a9f92a5b-9a4f-47f2-9a77-ddc3e63a732b" />
+
+     - Configure the trigger by providing the necessary details (e.g., URL, schedule).
+
+5. **Add Actions**:
+     - After adding a trigger, click on `+` to add actions to your workflow.
+     
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/2d25e5de-d7e1-4558-8e7b-b6bb388f86c2" />
+     
+     - Search for and select the actions you need (e.g., `Send an email`, `Create a file in OneDrive`).
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/06ed7e9f-3bf3-4e1e-910d-a37d11e7b2c4" />
+
+     - Configure each action by providing the required parameters.
+
+6. **Use Conditions and Loops**:
+     - You can add conditions and loops to control the flow of your workflow.
+     - Click on `+` and search for `Condition` to add conditional logic.
+     - Search for `Apply to each` or `Until` to add loops.
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/7d5d08a1-8c97-4bbb-8690-a95c5f060d07" />
+
+7. **Save and Test the Workflow**:
+   - After designing your workflow, click `Save` to save your changes.
+   - Use the `Run Trigger` button to manually trigger the workflow and test its functionality.
+   - Check the `Runs history` to see the execution details and troubleshoot any issues.
+
+#### Function App: Create a Function App
+
+1. **Sign in to Azure Portal**: Go to the [Azure portal](https://portal.azure.com/) and sign in with your Azure account credentials.
+2. **Search for Function Apps**: In the search bar at the top of the Azure portal, type `Function Apps` and select it from the search results. Click here to learn more about [Functions hosting options](https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale)
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/db60808f-dd64-43e6-a4e8-ab98c530a95a" />
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/d05be964-f594-4e83-a6ae-5bfd443bfd8d">
+
+3. **Create a New Function App**:
+     - Click on the `+ Create` button to start the creation process.
+     - Fill in the required fields:
+          - **Subscription**: Select the Azure subscription you want to use.
+          - **Resource Group**: Choose an existing resource group or create a new one.
+          - **Function App Name**: Provide a unique name for your Function App.
+          - **Region**: Select the region where you want to create the Function App.
+          - **Runtime Stack**: Choose the runtime stack for your functions (e.g., .NET, Node.js, Python).
+          - **Version**: Select the version of the runtime stack.
+          - **Operating System**: Choose the operating system (Windows or Linux).
+          - **Plan Type**: Choose between `Consumption` (pay-per-use) or `Premium` (fixed pricing).
+     - Click `Review + Create` and then `Create` to finalize the creation.
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/d9c2ab80-80b2-45d9-a9e5-5e3f4203d955" />
 
 ### Orchestration
 
 - **Azure Logic Apps**: Use Logic Apps to orchestrate complex workflows, ensuring seamless integration between different services and processes.
+
+     > Example Workflow: <br/>
+     > - Trigger: When a new email is received in Office 365 Outlook. <br/>
+     > - Action: Save the email's attachments to a specific folder in OneDrive. <br/>
+     > - Action: Send a notification to Microsoft Teams with the details of the email.
+
 - **Azure Data Factory**: For data integration and ETL processes, use Azure Data Factory to orchestrate data movement and transformation.
+
+     > - Example Pipeline: <br/> 
+     > - Extract: Fetch data from an on-premises SQL Server database. <br/> 
+     > - Transform: Clean and aggregate the data using data flows or compute services like Azure Databricks. <br/> 
+     > - Load: Load the transformed data into an Azure SQL Data Warehouse for analysis.
+     
+> [!NOTE]
+> If you are considering Azure Data Factory, please consider Microsoft Fabric. Click here to review an [essentials workshop about Microsoft Fabric](https://github.com/MicrosoftCloudEssentials-LearningHub/MS-Fabric-Essentials-Workshop).
 
 ### Infrastructure as Code (IaC)
 
-- **Azure Resource Manager (ARM) Templates**:
-   1. **Create ARM Templates**: Define your infrastructure as code using JSON-based ARM templates.
-   2. **Deploy Templates**: Use the Azure portal, Azure CLI, or PowerShell to deploy ARM templates and provision resources.
+#### Azure Resource Manager (ARM) Templates
 
-- **Terraform**:
-   1. **Install Terraform**: Set up Terraform on your local machine or CI/CD pipeline.
-   2. **Write Configuration Files**: Define your infrastructure using HCL (HashiCorp Configuration Language).
-   3. **Deploy Infrastructure**: Use Terraform commands to plan and apply your infrastructure changes.
+<p align="center">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/7d156f6f-0741-494b-8451-039ef4254be2">
+</p>
+
+From [Microsoft official documentation](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview)
+
+| Feature                        | Description                                                                 |
+|-------------------------------|-----------------------------------------------------------------------------|
+| **Consistent Management Layer** | ARM provides a unified management layer for creating, updating, and deleting resources in Azure. It ensures consistent results across all Azure APIs, tools, and SDKs. |
+| **Resource Groups**            | Logical containers that hold related resources for an Azure solution. Resources in a group can be managed collectively based on their lifecycle and security needs. |
+| **Declarative Syntax**         | ARM templates and Bicep files use declarative syntax to define the infrastructure to deploy. This allows for consistent and repeatable deployments. |
+| **Access Control and Security** | Use role-based access control (RBAC), locks, and tags to secure and organize resources. ARM ensures that only authorized users can manage resources. |
+| **Resource Providers**         | Services that supply Azure resources, such as Microsoft.Compute for virtual machines and Microsoft.Storage for storage accounts. |
+| **Infrastructure as Code (IaC)** | ARM supports IaC, enabling you to manage your infrastructure using code. This includes ARM templates and Bicep files for defining and deploying resources. |
+
+> Steps: 
+
+1. **Create ARM Templates**: Define your infrastructure as code using JSON-based ARM templates.
+2. **Deploy Templates**: Use the Azure portal, Azure CLI, or PowerShell to deploy ARM templates and provision resources.
+
+#### Terraform
+
+> Recommended structure:
+
+```
+.
+├── README.md
+├── src
+├────── main.tf
+├────── variables.tf
+├────── provider.tf
+├────── terraform.tfvars
+├────── remote-storage.tf
+├────── outputs.tf
+```
+
+- main.tf `(Main Terraform configuration file)`: This file contains the core infrastructure code. It defines the resources you want to create, such as virtual machines, networks, and storage. It's the primary file where you describe your infrastructure in a declarative manner.
+- variables.tf `(Variable definitions)`: This file is used to define variables that can be used throughout your Terraform configuration. By using variables, you can make your configuration more flexible and reusable. For example, you can define variables for resource names, sizes, and other parameters that might change between environments.
+- provider.tf `(Provider configurations)`: Providers are plugins that Terraform uses to interact with cloud providers, SaaS providers, and other APIs. This file specifies which providers (e.g., AWS, Azure, Google Cloud) you are using and any necessary configuration for them, such as authentication details.
+- terraform.tfvars `(Variable values)`: This file contains the actual values for the variables defined in `variables.tf`. By separating variable definitions and values, you can easily switch between different sets of values for different environments (e.g., development, staging, production) without changing the main configuration files.
+- remote-storage.tf `(Remote state storage configuration)`: Terraform uses a state file to keep track of the resources it manages. This file configures remote state storage, which allows you to store the state file in a remote location (e.g., an S3 bucket, Azure Blob Storage). Remote state storage is crucial for collaboration and ensuring that the state file is not lost or corrupted.
+- outputs.tf `(Output values)`: This file defines the output values that Terraform should return after applying the configuration. Outputs are useful for displaying information about the resources created, such as IP addresses, resource IDs, and other important details. They can also be used as inputs for other Terraform configurations or scripts.
+
+```mermaid 
+graph TD;
+    A[az login] --> B(terraform init)
+    B --> C{Terraform provisioning stage}
+    C -->|Review| D[terraform plan]
+    C -->|Order Now| E[terraform apply]
+    C -->|Delete Resource if needed| F[terraform destroy]
+```
+
+> Steps:
+
+1. **Install Terraform**: Set up Terraform on your local machine or CI/CD pipeline.
+2. **Write Configuration Files**: Define your infrastructure using HCL (HashiCorp Configuration Language).
+3. **Deploy Infrastructure**: Use Terraform commands to plan and apply your infrastructure changes.
+
+> [!TIP]
+> Click here to see [an example of deployment using Terraform and Azure RM](https://github.com/MicrosoftCloudEssentials-LearningHub/MS-Fabric-Essentials-Workshop/blob/main/Terraform/README.md).
 
 ## Continuous Improvement Practices
 
