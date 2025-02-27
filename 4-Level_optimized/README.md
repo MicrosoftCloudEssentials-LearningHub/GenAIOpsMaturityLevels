@@ -350,10 +350,13 @@ graph TD;
 
 ### Latest Azure AI Services
 
-> Azure AI Foundry Model Catalog
+> [Azure AI Foundry Model Catalog](https://ai.azure.com/explore/models)
 
-1. **Explore Models**: Use the [Azure AI Foundry Model Catalog](https://ai.azure.com/explore/models) to discover and evaluate a wide range of models from providers like OpenAI, Meta, NVIDIA, and Hugging Face.
-2. **Model Deployment**: Deploy models directly from the catalog to Azure services, ensuring seamless integration and scalability.
+| Action                         | Description                                                                 | Details                                                                                          |
+|------------------------------|-----------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| **Explore Models**           | Use the Azure AI Foundry Model Catalog to discover and evaluate a wide range of models from various providers. | - **Providers**: Includes models from OpenAI, Meta, NVIDIA, Hugging Face, and more.<br>- **Model Collections**: Organized into collections such as `Curated by Azure AI` and `Open models from Hugging Face`.<br>- **Search and Filters**: Use keyword search and filters to find models that meet your needs.<br>- **Benchmark Metrics**: Access model performance benchmark metrics for select models. |
+| **Model Deployment**         | Deploy models directly from the catalog to Azure services, ensuring seamless integration and scalability. | - **Deployment Options**: Choose between managed compute and serverless APIs.<br>- **Integration**: Models can be deployed to Azure services like Azure Machine Learning and Azure OpenAI Service.<br>- **Scalability**: Benefit from Azure's scalable infrastructure to handle varying workloads.<br>- **Support**: Microsoft provides support for deployment problems for models curated by Azure AI. |
+| **Custom Model Requests**    | Submit requests to add specific models to the catalog.                      | - **Request Submission**: Use the provided form to submit a request to add a model to the catalog.<br>- **Model Details**: Provide details about the model, including its use case and performance metrics. |
 
 ### Advanced Analytics
 
