@@ -114,6 +114,8 @@ From [Microsoft Documentation](https://learn.microsoft.com/pt-br/fabric/fundamen
 2. **Model Monitoring**: Implement monitoring solutions to track model performance and detect anomalies.
 3. **Continuous Delivery**: Automate the deployment of new model versions and updates.
 
+Click here to read more about [Machine Learning Operations (MLOps)](./2_MLOps.md)
+
 ## Evaluation of GenAI Applications
 
 ### Base Model Selection
