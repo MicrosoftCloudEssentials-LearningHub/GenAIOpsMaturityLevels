@@ -30,6 +30,8 @@ Last updated: 2025-02-27
 - [Data Factory - Connector overview](https://learn.microsoft.com/en-us/fabric/data-factory/connector-overview)
 - [What is Azure Resource Manager](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview)
 - [Resource access management in Azure](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/get-started/how-azure-resource-manager-works)
+- [Towards Inclusive Software Engineering Through - A/B Testing: A Case-Study at Windows](https://www.microsoft.com/en-us/research/uploads/prod/2021/02/AB_Testing_For_Inclusive_and_Equitable_Engineering.pdf)
+- [Implement A/B testing and progressive exposure deployment](https://learn.microsoft.com/en-us/training/modules/implement-test-progressive-exposure-deployment/)
 
 </details>
 
@@ -338,20 +340,11 @@ graph TD;
 
 ## Continuous Improvement Practices
 
-### Regular Reviews
-
-- **Performance Reviews**: Conduct regular reviews of LLM performance metrics to identify areas for improvement.
-- **Operational Reviews**: Evaluate operational processes and workflows to streamline and optimize them.
-
-### Feedback Loops
-
-- **User Feedback**: Collect feedback from users and stakeholders to understand their needs and experiences.
-- **Iterative Improvements**: Use the feedback to make iterative improvements to your LLM operations and applications.
-
-### A/B Testing
-
-- **Set Up A/B Tests**: Implement A/B testing to compare different versions of models or prompts.
-- **Analyze Results**: Evaluate the results of A/B tests to determine the most effective configurations and make data-driven decisions.
+| Practice                  | Description                                                                 | Steps                                                                                          | Examples in Microsoft Ecosystem                                                                 |
+|---------------------------|-----------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| **Regular Reviews**       | Conduct regular reviews of LLM performance metrics and operational processes to identify areas for improvement. | - **Performance Reviews**: Assess accuracy, latency, error rates, and user engagement.<br>- **Operational Reviews**: Evaluate deployment pipelines, resource utilization, and incident management. | - **Azure Application Insights**: Use to collect and analyze performance metrics.<br>- **Azure DevOps**: Use to manage and review deployment pipelines. |
+| **Feedback Loops**        | Collect and use feedback from users and stakeholders to make iterative improvements. | - **User Feedback**: Gather insights through surveys, interviews, and feedback forms.<br>- **Iterative Improvements**: Analyze feedback, prioritize improvements, implement changes, and monitor impact. | - **Microsoft Forms**: Use to create and distribute surveys.<br>- **UserVoice**: Implement to collect and manage user feedback. |
+| **A/B Testing**           | Implement A/B testing `(A/B testing, also known as split testing, is a method of comparing two versions of a product, service, or idea to determine which performs better. It involves randomly assigning users to different variants (A and B) and measuring their performance based on predefined metrics. This helps in making data-driven decisions and optimizing performance)` to compare different versions of models or prompts and make data-driven decisions. | - **Set Up A/B Tests**: Define variants, randomly assign users, and measure performance metrics.<br>- **Analyze Results**: Collect data, perform statistical analysis, and decide on the best variant. | - **Azure Machine Learning**: Use to set up and manage A/B tests.<br>- **Power BI**: Use to visualize and analyze A/B test results. | 
 
 ## Leverage Cutting-Edge Tools and Techniques
 
