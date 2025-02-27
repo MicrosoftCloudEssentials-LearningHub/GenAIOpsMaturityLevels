@@ -88,7 +88,7 @@ Last updated: 2025-02-26
 
 | Before  | After | 
 | --- | --- | 
-| <img width="550" alt="image" src="https://github.com/user-attachments/assets/57599fb3-2f0e-4293-8f24-c8e4d1bcfe29" />  | <img width="550" alt="image" src="" /> | 
+| <img width="550" alt="image" src="https://github.com/user-attachments/assets/57599fb3-2f0e-4293-8f24-c8e4d1bcfe29" />  | <img width="550" alt="image" src="https://github.com/user-attachments/assets/8bf9fde7-9909-4af9-8e8e-f25376e1db96" /> | 
 
 - **Create Alerts**:
      1. **Define Alert Rules**:
@@ -124,11 +124,25 @@ Last updated: 2025-02-26
 
 ## Ensure Compliance
 
+1. **Create Policies**:
+      
+      | **Policy Component**  | **Description**                                                                                   |
+      |-----------------------|---------------------------------------------------------------------------------------------------|
+      | **Azure Policy**      | Use Azure Policy to create policies that enforce compliance across your resources. Policies can be defined for various aspects such as resource configurations, tagging, and security standards.  |
+      | **Policy Definitions**| Write policy definitions that specify the desired state of your resources. For example, you can create a policy to ensure all resources have specific tags or that certain configurations are enforced. |
+      | **Policy Initiatives**| Group multiple policies into initiatives to manage them as a single unit. This is useful for enforcing a set of related policies across your environment.    |
+
+2. **Assign Policies**:
+       
+      | **Assignment Component**       | **Description**                                                                                   |
+      |-------------------------------|---------------------------------------------------------------------------------------------------|
+      | **Scope Assignment**          | Assign policies to specific scopes such as subscriptions, resource groups, or individual resources. This ensures that the policies are applied to the relevant resources.  |
+      | **Policy Assignment Parameters**| Configure parameters for policy assignments to customize their behavior. For example, you can specify which tags should be enforced or which configurations should be checked. |
+
+
+
 ### Adhere to best practices and compliance standards
 
-- **Define Policies**:
-     1. **Create Policies**: Use Azure Policy to define and assign policies that enforce compliance. Create policies for resource configurations, tagging, and security standards.
-     2. **Assign Policies**: Assign policies to your resources to ensure they adhere to compliance standards.
 
 ### Use Azure Policy to enforce compliance rules
 
