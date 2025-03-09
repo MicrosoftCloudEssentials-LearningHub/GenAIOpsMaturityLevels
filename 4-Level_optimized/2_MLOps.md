@@ -40,11 +40,18 @@ Last updated: 2025-02-27
 
 ### Create an Azure Machine Learning Workspace
 
-- Sign in to the Azure portal.
+- Sign in to the [Azure portal](https://portal.azure.com/).
 - In the search bar, type `Machine Learning` and select `Azure Machine Learning`.
 - Click on `+ Create` to create a new workspace.
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/38e7e18c-76d7-45a4-8ea5-082e9f210b5c" />
+
 - Fill in the required fields: Subscription, Resource Group, Workspace Name, and Region.
 - Click `Review + Create` and then `Create` to finalize the creation.
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/14d86b9c-4a20-4078-91ee-f2811915735d" />
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/45cf16d3-d3e2-4d1e-a142-97cfe13a0324" />
 
 ### Set Up Azure DevOps or GitHub Actions
 
@@ -104,6 +111,8 @@ steps:
 
 - In the Azure Machine Learning workspace, navigate to `Endpoints` and select the deployed model endpoint.
 - Click on `Monitoring` to configure monitoring settings.
+
+https://github.com/user-attachments/assets/64dc5bd6-1fff-40c2-9a30-7d5fe38b9850
 
 ### Define Monitoring Metrics
 
