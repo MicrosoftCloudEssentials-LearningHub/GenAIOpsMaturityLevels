@@ -37,7 +37,7 @@ Last updated: 2025-03-09
         - **Name**: Provide a unique name for the resource.
     4. Click `Review + Create` and then `Create` to finalize the setup.
 
-## Access API Keys
+### Access API Keys
 
 - Navigate to the Azure AI Foundry resource you created.
 - Go to the `Keys and Endpoint` section to retrieve the API key and endpoint URL. These will be used to authenticate API requests.
@@ -56,7 +56,7 @@ Last updated: 2025-03-09
    }'
    ```
 
-## Explore Documentation
+### Explore Documentation
 
 > Review the [Azure OpenAI Service Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/) to understand available models, endpoints, and parameters.
 
