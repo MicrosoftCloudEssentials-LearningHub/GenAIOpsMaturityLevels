@@ -21,7 +21,7 @@ Last updated: 2025-02-27
 
 ## Content 
 
-- [Level 1 - Initial: Quick Guide](./1-Level_initial.md)  - in progress
+- [Level 1 - Initial: Quick Guide](./1-Level_initial.md) 
 - [Level 2 - Defined: Quick Guide](./2-Level_defined.md) - in progress 
 - [Level 3 - Managed: Quick Guide](./3-Level_managed.md)
 - [Level 4 - Optimized: Quick Guide](./4-Level_optimized/README.md)
