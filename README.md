@@ -43,7 +43,7 @@ graph LR
 
     B1 -->|Explore LLM APIs<br>Basic Metrics| B2
     B2 -->|Complex Prompts<br>Systematic Deployment| B3
-    B3 -->|Monitoring & Logging<br>Performance Optimization| B4
+    B3 -->|Monitoring + Logging<br>Performance Optimization| B4
     B4 -->|Advanced Automation<br>Continuous Improvement| B4
 ```
 
