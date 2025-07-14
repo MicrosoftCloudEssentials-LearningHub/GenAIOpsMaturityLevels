@@ -18,7 +18,8 @@ Last updated: 2025-03-10
 - [Model monitoring for generative AI applications (preview)](https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-monitor-generative-ai-applications?view=azureml-api-2)
 - [Machine Learning operations maturity model - MLOps](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/mlops-maturity-model)
 - [MLOps v2](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/machine-learning-operations-v2)
-- [Document Intelligence query field extraction](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/concept/query-fields?view=doc-intel-4.0.0)
+- [Zero Trust security](https://learn.microsoft.com/en-us/azure/security/fundamentals/zero-trust)
+- [Zero Trust illustrations for IT architects and implementers](https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-tech-illus)
 
 </details>
 
