@@ -59,7 +59,9 @@ graph LR
 | **Level 3 - Managed** | Organizations have established processes for managing LLMs, including monitoring, logging, and performance optimization. | - Enhance monitoring and logging capabilities<br>- Optimize performance<br>- Ensure compliance with best practices |
 | **Level 4 - Optimized** | Organizations have fully optimized their LLM operations, with continuous improvement and advanced automation. | - Implement advanced automation<br>- Continuous improvement practices<br>- Leverage cutting-edge tools and techniques for LLM management |
 
+<!-- START BADGE -->
 <div align="center">
-  <h3 style="color: #4CAF50;">Total Visitors</h3>
-  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+  <img src="https://img.shields.io/badge/Total%20views-354-limegreen" alt="Total views">
+  <p>Refresh Date: 2025-07-17</p>
 </div>
+<!-- END BADGE -->
