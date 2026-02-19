@@ -30,6 +30,8 @@ Last updated: 2025-08-12
 - [Level 3 - Managed: Quick Guide](./3-Level_managed.md)
 - [Level 4 - Optimized: Quick Guide](./4-Level_optimized/README.md)
 
+    <img width="600" height="595" alt="Screenshot 2026-02-18 190923" src="https://github.com/user-attachments/assets/f7246a17-9f56-4fd0-b554-8ebacf3f308e" />
+
 ## Overview 
 
 > [!IMPORTANT]
