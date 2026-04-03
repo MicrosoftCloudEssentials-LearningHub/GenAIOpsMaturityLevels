@@ -2,8 +2,7 @@
 
 Costa Rica
 
-[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
-[brown9804](https://github.com/brown9804)
+[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/) [Cloud2BR OSS - Learning Hub](https://github.com/Cloud2BR-MSFTLearningHub)
 
 Last updated: 2025-07-17
 
@@ -317,7 +316,7 @@ Last updated: 2025-07-17
      > - Load: Load the transformed data into an Azure SQL Data Warehouse for analysis.
      
 > [!NOTE]
-> If you are considering Azure Data Factory, please consider Microsoft Fabric. Click here to review an [essentials workshop about Microsoft Fabric](https://github.com/MicrosoftCloudEssentials-LearningHub/MS-Fabric-Essentials-Workshop).
+> If you are considering Azure Data Factory, please consider Microsoft Fabric. Click here to review an [essentials workshop about Microsoft Fabric](https://github.com/Cloud2BR-MSFTLearningHub/MS-Fabric-Essentials-Workshop).
 
 ## Infrastructure as Code (IaC)
 
@@ -382,7 +381,7 @@ graph TD;
 3. **Deploy Infrastructure**: Use Terraform commands to plan and apply your infrastructure changes.
 
 > [!TIP]
-> Click here to see [an example of deployment using Terraform and Azure RM](https://github.com/MicrosoftCloudEssentials-LearningHub/MS-Fabric-Essentials-Workshop/blob/main/Terraform/README.md).
+> Click here to see [an example of deployment using Terraform and Azure RM](https://github.com/Cloud2BR-MSFTLearningHub/MS-Fabric-Essentials-Workshop/blob/main/Terraform/README.md).
 
 <!-- START BADGE -->
 <div align="center">

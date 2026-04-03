@@ -2,8 +2,7 @@
 
 Costa Rica
 
-[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
-[brown9804](https://github.com/brown9804)
+[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/) [Cloud2BR OSS - Learning Hub](https://github.com/Cloud2BR-MSFTLearningHub)
 
 Last updated: 2025-07-17
 
@@ -100,7 +99,7 @@ https://github.com/user-attachments/assets/5b10270d-b5fe-40f7-9af2-df2cdc77658b
 Click here to read more about [Implement Advanced Analytics](./1_ImplementAdvancedAnalytics.md)
 
 > [!NOTE]
-> If you are considering Azure Data Factory, Azure Synapse Analytics, and Power Bi please consider Microsoft Fabric. Click here to review an [essentials workshop about Microsoft Fabric](https://github.com/MicrosoftCloudEssentials-LearningHub/MS-Fabric-Essentials-Workshop).
+> If you are considering Azure Data Factory, Azure Synapse Analytics, and Power Bi please consider Microsoft Fabric. Click here to review an [essentials workshop about Microsoft Fabric](https://github.com/Cloud2BR-MSFTLearningHub/MS-Fabric-Essentials-Workshop).
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/8fdb3198-8fda-4dd0-869e-b0dccb268a30" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px; width: 70%; height: auto;" />
